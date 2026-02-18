@@ -1,0 +1,63 @@
+﻿@using Demir_Bakiu_Employees.Models
+@model Result<PairOfEmployeesResponse>
+
+@{
+    ViewData["Title"] = "Employee Analyzer";
+}
+
+<div class="container mt-5">
+    <div class="card shadow">
+        <div class="card-header bg-primary text-white">
+            <h3>Upload Employee CSV</h3>
+        </div>
+        <div class="card-body">
+            <form asp-action="UploadAndExtractFileDetails" asp-controller="Employee" method="post" enctype="multipart/form-data">
+                <div class="row">
+                    <div class="col-md-8">
+                        <input type="file" name="file" class="form-control" accept=".csv" />
+                    </div>
+                    <div class="col-md-4">
+                        <button type="submit" class="btn btn-success w-100">Analyze Pairs</button>
+                    </div>
+                </div>
+            </form>
+
+            @if (Model != null && !Model.IsSuccess && !string.IsNullOrWhiteSpace(Model?.Message))
+            {
+                <div class="alert alert-danger mt-3">@Model.Message</div>
+            }
+        </div>
+    </div>
+
+    @if (Model?.Data != null)
+    {
+        <div id="resultArea" class="mt-5">
+            <div class="alert alert-info">
+                <h4>Longest Working Pair: ID @Model.Data.EmployeeId1 & ID @Model.Data.EmployeeId2</h4>
+                <p>Total Collaboration: @Model.Data.CommonProjectDetails.Sum(x => x.DaysWorked).ToString("F0") Days</p>
+            </div>
+
+            <table class="table table-hover table-striped border">
+                <thead class="table-dark">
+                    <tr>
+                        <th>Employee ID #1</th>
+                        <th>Employee ID #2</th>
+                        <th>Project ID</th>
+                        <th>Days Worked</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var project in Model.Data.CommonProjectDetails)
+                    {
+                        <tr>
+                            <td>@Model.Data.EmployeeId1</td>
+                            <td>@Model.Data.EmployeeId2</td>
+                            <td>@project.ProjectId</td>
+                            <td>@project.DaysWorked.ToString("F0")</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    }
+</div>
