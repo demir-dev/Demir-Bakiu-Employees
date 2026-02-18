@@ -4,6 +4,29 @@ Employee Collaboration Analyzer mini-project which serves the solution for the a
 
 ---
 
+## 📥 Instructions to Run the Project
+
+This project is implemented as a **Web MVC Application** to specifically fulfill the assignment's bonus requirements regarding **UI implementation** and **extended date format support**. By choosing this architecture, the traditional console-based processing is replaced with a more intuitive, professional, and visually clear interface.
+
+Once the application is started, you will be automatically directed to the analyzer interface.
+
+### Steps to Execute:
+
+1. **Clone the Repository**
+
+2. **Run the Application**:
+* **Via CLI**: Execute `dotnet run`
+* **Via Visual Studio**: Open the `.sln` file and press **F5** or the **Play** button (Ensure the startup project is set to the MVC project).
+
+
+3. **Analyze Your Data (UI Method)**:
+* The application will automatically launch in your default web browser.
+* Instead of manual console entries, use the **"Choose File"** button to select any `.csv` file from your local machine.
+* Click **"Analyze Pairs"**.
+* The system will instantly process the data and display the results on the UI, featuring the longest-working pair and a clear, styled table of their shared project history.
+
+---
+
 ## 🚀 Key Features
 
 * **Advanced Date Parsing**: Implements a culture-agnostic parsing engine that iterates through `CultureInfo.GetCultures()` to support various international date formats (ISO, US, European, Textual).
