@@ -7,7 +7,6 @@ Employee Collaboration Analyzer mini-project which serves the solution for the a
 ## 🚀 Key Features
 
 * **Advanced Date Parsing**: Implements a culture-agnostic parsing engine that iterates through `CultureInfo.GetCultures()` to support various international date formats (ISO, US, European, Textual).
-* **High-Performance Algorithm**: Uses a **Sweep-Line** style optimization. By grouping by Project ID and sorting by `DateFrom`, the algorithm achieves an efficient $O(P \cdot K \log K)$ complexity with early-exit logic to minimize unnecessary comparisons.
 * **Strict CSV Validation**: Enforces a robust data contract (4-column validation) with specific error messaging to identify malformed data (e.g., "The value '34F' cannot be parsed").
 * **NULL Handling**: Automatically treats `NULL` or empty `DateTo` values as `DateTime.Today`.
 * **Modern MVC Architecture**: Built with a clean separation of concerns using Interfaces, Services, and Strongly-Typed Models.
@@ -47,10 +46,3 @@ Employee Collaboration Analyzer mini-project which serves the solution for the a
 
 ---
 
-## 📥 Getting Started
-
-1.  Clone the repository:
-    ```bash
-    git clone [https://github.com/DemirBakiu/Demir-Bakiu-employees.git](https://github.com/DemirBakiu/Demir-Bakiu-employees.git)
-    ```
-2.  Navigate to the project directory and run:
