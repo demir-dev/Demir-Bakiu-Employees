@@ -1,6 +1,6 @@
 # Employee Collaboration Analyzer
 
-A high-performance ASP.NET Core MVC application designed to identify pairs of employees who have worked together on common projects for the longest period.
+Employee Collaboration Analyzer mini-project which serves the solution for the assignment given by Sirma Group.
 
 ---
 
